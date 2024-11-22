@@ -22,11 +22,11 @@ f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
 csv_reader = csv.reader(f)
 for line in csv_reader:
     questions_list.append(line[0])
-    #st.write(line)
+    st.write(line)
 f.close()
 
 shuffle(questions_list)
-newlist = questions_list[:2]
+newlist = questions_list[:4]
 
 #print questions
 
@@ -44,13 +44,13 @@ for qt in newlist:
             response = st.text_input("Enter response: ")
             st.stop()   
             if response.upper() == line[6]:
-                    st.warning("Correto!")
-                    rights = rights+1
+                st.warning("Correto!")
+                rights = rights+1
             else:    
-                    st.warning("Errado")
-                    wrong_questions.append(questions_nums)
-                    list_responses.append(line[6])
-                    questions_nums = questions_nums+1
+                st.warning("Errado")
+                wrong_questions.append(questions_nums)
+            list_responses.append(line[6])
+            questions_nums = questions_nums+1
                 
     f.close()
     
