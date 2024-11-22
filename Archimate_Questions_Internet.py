@@ -20,11 +20,11 @@ f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
 csv_reader = csv.reader(f)
 for line in csv_reader:
     questions_list.append(line[0])
+    st.write(line)
 f.close()
 
 shuffle(questions_list)
 newlist = questions_list[:2]
-st.write(newlist)
 
 #print questions
 questions_nums = 1
