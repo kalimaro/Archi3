@@ -16,14 +16,14 @@ questions_list = []
 list_responses = []
 wrong_questions = []
 
-f = open ('Archimate_Data_Bank.csv',encoding='UTF8')
+f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
 csv_reader = csv.reader(f)
 for line in csv_reader:
     questions_list.append(line[0])
 f.close()
 
 shuffle(questions_list)
-newlist = questions_list[:5]
+newlist = questions_list[:2]
 print (newlist)
 
 #print questions
