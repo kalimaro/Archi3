@@ -42,13 +42,14 @@ for qt in newlist:
             response = st.text_input("Enter response: ")
             st.stop()   
             if response.upper() == line[6]:
-                    st.write("Correto!")
+                    st.warning("Correto!")
                     rights = rights+1
             else:    
-                    st.write("Errado")
+                    st.warning("Errado")
                     wrong_questions.append(questions_nums)
                     list_responses.append(line[6])
                     questions_nums = questions_nums+1
+                
     f.close()
     
 #Print response list and wrong answers
