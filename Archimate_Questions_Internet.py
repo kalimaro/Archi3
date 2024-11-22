@@ -26,12 +26,11 @@ for line in csv_reader:
 f.close()
 
 shuffle(questions_list)
-st.write(questions_list)
 newlist = questions_list[:4]
 
 #print questions
 
-
+st.write(newlist)
 for qt in newlist:
     f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
     csv_reader = csv.reader(f)
