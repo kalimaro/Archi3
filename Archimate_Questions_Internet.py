@@ -30,10 +30,11 @@ newlist = questions_list[:4]
 
 #print questions
 
-st.write(newlist)
+#st.write(newlist)
 for qt in newlist:
     f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
     csv_reader = csv.reader(f)
+    st.write(csv_reader)
     for line in csv_reader:
         if line[0]== qt :
             st.write(str(questions_nums)+") "+line[1])
@@ -49,8 +50,8 @@ for qt in newlist:
             else:    
                 st.warning("Errado")
                 wrong_questions.append(questions_nums)
-        list_responses.append(line[6])
-        questions_nums = questions_nums+1
+            list_responses.append(line[6])
+            questions_nums = questions_nums+1
                 
     f.close()
     
