@@ -34,10 +34,10 @@ for qt in newlist:
     csv_reader = csv.reader(f)
     for line in csv_reader:
         if line[0]== qt :
-            st.write(str(questions_nums)+") ")
+            st.write(str(questions_nums)+")"+line[1])
             st.write(line[2])
             st.write(line[3])
-            st.wrire(line[4])
+            st.write(line[4])
             st.write(line[5]) 
             response = st.text_input("Enter response: ")
             if response.upper() == line[6]:
