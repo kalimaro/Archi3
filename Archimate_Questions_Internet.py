@@ -28,6 +28,7 @@ newlist = questions_list[:5]
 
 #print questions
 questions_nums = 1
+st.title("Archimate Mock Test!")
 for qt in newlist:
     f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
     csv_reader = csv.reader(f)
