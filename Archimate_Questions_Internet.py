@@ -24,7 +24,7 @@ f.close()
 
 shuffle(questions_list)
 newlist = questions_list[:2]
-print (newlist)
+st.write(newlist)
 
 #print questions
 questions_nums = 1
