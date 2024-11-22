@@ -28,7 +28,7 @@ newlist = questions_list[:5]
 #print questions
 questions_nums = 1
 for qt in newlist:
-    f = open (',/Archimate Data Bank.csv',"r", encoding='UTF8')
+    f = open ('./Archimate Data Bank.csv',"r", encoding='UTF8')
     csv_reader = csv.reader(f)
     for line in csv_reader:
         if line[0]== qt :
