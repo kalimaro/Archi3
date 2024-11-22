@@ -1,4 +1,5 @@
 import pandas as pd
+import streamlit as st
 
 #url = "Archimate_Data_Bank.csv"
 #df = pd.read_csv(url)
@@ -32,7 +33,7 @@ for qt in newlist:
     csv_reader = csv.reader(f)
     for line in csv_reader:
         if line[0]== qt :
-            print ("\n"+str(questions_nums)+") "+line[1]+"\n   "+line[2]+"\n   "+line[3]+"\n   "+line[4]+"\n   "+line[5]+"\n") 
+            st.write("\n"+str(questions_nums)+") "+line[1]+"\n   "+line[2]+"\n   "+line[3]+"\n   "+line[4]+"\n   "+line[5]+"\n") 
             response = input("Enter response: ")
             if response.upper() == line[6]:
                 rights = rights+1
@@ -44,14 +45,14 @@ for qt in newlist:
     
 #Print response list and wrong answers
 for i in range(len(list_responses)):
-    print("Question "+str(i+1)+") "+list_responses[i])
+    st.write ("Question "+str(i+1)+") "+list_responses[i])
           
 if wrong_questions == []:
-    print ("\nNo wrong answers! Congrats!")
+    st.write("\nNo wrong answers! Congrats!")
 else:
-    print ("Wrong Questions:\n")
+    st.write ("Wrong Questions:\n")
     for w in wrong_questions:
-        print ("Question: "+str(w))
+        st.write ("Question: "+str(w))
     
 final_score = rights/len(list_responses)*100
-print ("\nYour final score is: "+str(final_score)+"%")
+st.write ("\nYour final score is: "+str(final_score)+"%")
