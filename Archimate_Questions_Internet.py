@@ -16,6 +16,8 @@ questions_list = []
 list_responses = []
 wrong_questions = []
 
+st.title("Archimate Mock Test!")
+questions_nums = 1
 f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
 csv_reader = csv.reader(f)
 for line in csv_reader:
@@ -27,8 +29,8 @@ shuffle(questions_list)
 newlist = questions_list[:2]
 
 #print questions
-questions_nums = 1
-st.title("Archimate Mock Test!")
+
+
 for qt in newlist:
     f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
     csv_reader = csv.reader(f)
