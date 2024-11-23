@@ -42,7 +42,7 @@ for qt in newlist:
             st.write(line[4])
             st.write(line[5])
             with st.form(key=line[0]):
-                response = st.text_input("Enter response: ")
+                response = st.text_input("Enter response: ", key=str(questions_nums))
                 submit_button = st.form_submit_button(label=str(questions_nums))
             if submit_button:
                 if response.upper() == line[6]:
