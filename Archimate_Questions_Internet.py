@@ -43,7 +43,7 @@ for qt in newlist:
             st.write(line[5])
             with st.form(key=line[0]):
                 response = st.text_input("Enter response: ")
-                submit_button = st.form_submit_button(label='Question'+questions_nums)
+                submit_button = st.form_submit_button(label=str('Question'+questions_nums))
             if submit_button:
                 if response.upper() == line[6]:
                     st.warning("Correto!",icon="⚠️")
