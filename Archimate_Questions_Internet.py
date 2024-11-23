@@ -46,7 +46,7 @@ with st.form(key="my_form"):
                 response[questions_nums] = st.text_input("Enter response: ", key=str(questions_nums))
         questions_nums = questions_nums+1
         f.close()
-    submit_button = st.form_submit_button(label="Submit")
+submit_button = st.form_submit_button(label="Submit")
     
 if submit_button:
     #for i in range(questions_nums):
@@ -65,13 +65,13 @@ def results():
         st.write ("Question "+ str(i+1) +") " + list_responses[i])
           
     if wrong_questions == []:
-        st.write("\nNo wrong answers! Congrats!")
+        st.write("No wrong answers! Congrats!")
     else:
         st.write ("Wrong Questions:\n")
         for w in wrong_questions:
             st.write ("Question: "+str(w))
     
     final_score = rights/len(list_responses)*100
-    st.write ("\nYour final score is: "+str(final_score)+"%")
+    st.write ("Your final score is: " + str(final_score)+"%")
     
 #results()
