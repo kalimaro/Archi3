@@ -36,7 +36,7 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
                 st.write(line[3])
                 st.write(line[4])
                 st.write(line[5])
-                if 'responses' in st.session_state:
+                if 'responses' not in st.session_state:
                     right_questions.append(line[6])
                 st.selectbox("Enter response: ",("A", "B", "C", "D"), key=f"question_{questions_nums}", index=None)
         questions_nums = questions_nums+1
