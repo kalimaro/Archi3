@@ -13,6 +13,8 @@ right_questions = []
 
 if 'responses' not in st.session_state:
     st.session_state.responses = {}
+if 'form_submitted' not in st.session_state:
+    st.session_state.form_submitted = False
 st.title("Archimate Mock Test!")
 questions_nums = 1
 f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
@@ -44,6 +46,7 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
     st.write(right_questions)
     
     if submit_button:
+        st.session_state.form_submitted = True
         for i in range(questions_nums-1):
             st.write(i)
             st.session_state.responses[f"question_{i+1}"] = st.session_state[f"question_{i+1}"]
