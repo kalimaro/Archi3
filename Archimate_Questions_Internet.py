@@ -51,10 +51,11 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
             if st.session_state.responses[f"question_{i+1}"] == right_questions[i]:
                 st.warning("Correct!",icon="⚠️")
                 rights = rights+1
+                list_responses.append(st.session_state.responses[f"question_{i+1}"])
             else:
                 st.warning("Incorrect",icon="⚠️")
                 wrong_questions.append(i+1)
-            list_responses.append(line[6])
+                list_responses.append(st.session_state.responses[f"question_{i+1}"])
         st.write("Responses:", st.session_state)
         st.write(list_responses)
         for j in range(len(list_responses)):
