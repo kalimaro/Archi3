@@ -61,7 +61,7 @@ if submit_button:
             rights = rights+1
         else:
             st.warning("Errado",icon="⚠️")
-            wrong_questions.append({i+1})
+            wrong_questions.append(i+1)
             list_responses.append(line[6])
     st.write("Responses:", st.session_state)
     st.write(right_questions)
@@ -71,9 +71,9 @@ if submit_button:
     if wrong_questions == []:
         st.write("No wrong answers! Congrats!")
     else:
-        st.write ("Wrong Questions:\n")
+        st.write ("Wrong Questions:")
         for w in wrong_questions:
             st.write ("Question: "+str(w))
-    final_score = rights/len(list_responses)*100
+final_score = rights/len(list_responses)*100
     
 st.stop()
