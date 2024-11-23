@@ -65,9 +65,9 @@ if submit_button:
             list_responses.append(line[6])
     st.write("Responses:", st.session_state)
     st.write(right_questions)
-    st.write(rights)    
-    for i in range(len(list_responses)):
-        st.write ("Question "+ str(i+1) +") " + list_responses[i])
+    st.write(list_responses)    
+    for j in range(len(list_responses)):
+        st.write ("Question "+ str(j+1) +") " + list_responses[j])
           
     if wrong_questions == []:
         st.write("No wrong answers! Congrats!")
