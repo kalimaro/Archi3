@@ -15,6 +15,7 @@ rights = 0
 questions_list = []
 list_responses = []
 wrong_questions = []
+response = []
 
 st.title("Archimate Mock Test!")
 questions_nums = 1
