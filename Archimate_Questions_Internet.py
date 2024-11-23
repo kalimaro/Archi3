@@ -19,7 +19,7 @@ if 'form_submitted' not in st.session_state:
 st.title("Archimate Mock Test!")
 
 with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
-    st.write("Entrando no form= " + str(st.session_state.form_submitted))
+    #st.write("Entrando no form= " + str(st.session_state.form_submitted))
     if st.session_state.form_submitted == False:
         questions_nums = 1
         f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
