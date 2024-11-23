@@ -41,18 +41,15 @@ for qt in newlist:
             st.write(line[3])
             st.write(line[4])
             st.write(line[5])
-            with st.form(key=line[0]):
-                response = st.text_input("Enter response: ", key=str(questions_nums))
-                submit_button = st.form_submit_button(label="Go!")
-            if submit_button:
-                if response.upper() == line[6]:
-                    st.warning("Correto!",icon="⚠️")
-                    rights = rights+1
-                else:    
-                    st.warning("Errado",icon="⚠️")
-                    wrong_questions.append(questions_nums)
-            list_responses.append(line[6])
-            response = ""
+            response = st.text_input("Enter response: ", key=str(questions_nums))
+#                if response.upper() == line[6]:
+#                    st.warning("Correto!",icon="⚠️")
+#                    rights = rights+1
+#                else:    
+#                    st.warning("Errado",icon="⚠️")
+#                    wrong_questions.append(questions_nums)
+#            list_responses.append(line[6])
+#            response = ""
     questions_nums = questions_nums+1
     f.close()
 questions_nums = questions_nums+1
