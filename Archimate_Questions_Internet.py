@@ -18,15 +18,11 @@ f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
 csv_reader = csv.reader(f)
 for line in csv_reader:
     questions_list.append(line[0])
-    #st.write(line)
 f.close()
 
 shuffle(questions_list)
 newlist = questions_list[:4]
 
- #print questions
-
-#st.write(newlist)
 if 'responses' not in st.session_state:
     st.session_state.responses = {}
 with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
@@ -74,4 +70,4 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
         st.write("len List resp: ", len(list_responses))
         final_score = rights/len(list_responses)*100
         st.write("Your final score is: "+str(final_score)+"%")
-        st.stop()
+    st.stop()
