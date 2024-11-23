@@ -36,7 +36,7 @@ for qt in newlist:
     csv_reader = csv.reader(f)
     for line in csv_reader:
         if line[0]== qt :
-            st.write(str(questions_nums)+") "+line[1])
+            st.write(str(questions_nums)+') '+line[1])
             st.write(line[2])
             st.write(line[3])
             st.write(line[4])
