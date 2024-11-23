@@ -30,7 +30,7 @@ f.close()
 shuffle(questions_list)
 newlist = questions_list[:3]
 
-#print questions
+ #print questions
 
 #st.write(newlist)
 if 'responses' not in st.session_state:
