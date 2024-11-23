@@ -42,7 +42,7 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
                     st.selectbox("Enter response: ",("A", "B", "C", "D"), key=f"question_{questions_nums}", index=None)
             questions_nums = questions_nums+1
             f.close()
-        submit_button = st.form_submit_button(label="Submit")
+    submit_button = st.form_submit_button(label="Submit")
     st.write(right_questions)
     
     if submit_button:
