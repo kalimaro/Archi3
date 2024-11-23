@@ -68,3 +68,4 @@ else:
     
 final_score = rights/len(list_responses)*100
 st.write ("\nYour final score is: "+str(final_score)+"%")
+st.stop()
