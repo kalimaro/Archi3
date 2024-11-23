@@ -17,19 +17,17 @@ if 'form_submitted' not in st.session_state:
     st.session_state.form_submitted = False
     
 st.title("Archimate Mock Test!")
-questions_nums = 1
-f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
-csv_reader = csv.reader(f)
-for line in csv_reader:
-    questions_list.append(line[0])
-f.close()
-if st.session_state.form_submitted == True:
-    shuffle(questions_list)
-    newlist = questions_list[:4]
-
 
 with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
     if not st.session_state.form_submitted:
+        questions_nums = 1
+        f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
+        csv_reader = csv.reader(f)
+        for line in csv_reader:
+            questions_list.append(line[0])
+        f.close()
+        shuffle(questions_list)
+        newlist = questions_list[:4]
         for qt in newlist:
             f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
             csv_reader = csv.reader(f)
@@ -44,7 +42,7 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
                     st.selectbox("Enter response: ",("A", "B", "C", "D"), key=f"question_{questions_nums}", index=None)
             questions_nums = questions_nums+1
             f.close()
-    submit_button = st.form_submit_button(label="Submit")
+        submit_button = st.form_submit_button(label="Submit")
     st.write(right_questions)
     
     if submit_button:
