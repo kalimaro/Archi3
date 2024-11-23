@@ -15,6 +15,7 @@ rights = 0
 questions_list = []
 list_responses = []
 wrong_questions = []
+right_questions = []
 
 
 st.title("Archimate Mock Test!")
@@ -45,6 +46,7 @@ with st.form(key="my_form"):
                 st.write(line[3])
                 st.write(line[4])
                 st.write(line[5])
+                right_questions.append(line[6])
                 st.text_input("Enter response: ", key=f"question_{questions_nums}")
         questions_nums = questions_nums+1
         f.close()
@@ -53,7 +55,7 @@ with st.form(key="my_form"):
 if submit_button:
     for i in range(questions_nums-1):
         st.write(i)
-    #    st.session_state.responses[f"question_{i+1}"] = st.session_state[f"question_{i}"]
+        st.session_state.responses[f"question_{i+1}"] = st.session_state[f"question_{i}"]
     st.write("Responses:", st.session_state)
     st.stop()
     #st.text_input(f"Question {i+1}", key=f"question_{i}")
