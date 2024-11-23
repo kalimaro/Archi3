@@ -1,11 +1,5 @@
 import pandas as pd
 import streamlit as st
-
-#url = "Archimate_Data_Bank.csv"
-#df = pd.read_csv(url)
-
-# Example: Print the first few rows of the DataFrame
-#print(df.head())
 import csv
 from random import shuffle
 import pandas as pd
@@ -35,7 +29,7 @@ newlist = questions_list[:4]
 #st.write(newlist)
 if 'responses' not in st.session_state:
     st.session_state.responses = {}
-with st.form(key="my_form"):
+with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
     for qt in newlist:
         f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
         csv_reader = csv.reader(f)
