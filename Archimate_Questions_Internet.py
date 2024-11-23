@@ -11,8 +11,8 @@ list_responses = []
 wrong_questions = []
 right_questions = []
 
-if 'responses' not in st.session_state:
-    st.session_state.responses = {}
+#if 'responses' not in st.session_state:
+#    st.session_state.responses = {}
 st.title("Archimate Mock Test!")
 questions_nums = 1
 f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
