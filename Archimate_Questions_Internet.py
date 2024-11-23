@@ -55,7 +55,7 @@ with st.form(key="my_form"):
     
 if submit_button:
     for i in range(questions_nums-1):
-        #st.write(i)
+        st.write(i)
         st.session_state.responses[f"question_{i+1}"] = st.session_state[f"question_{i+1}"]
         if st.session_state.responses[f"question_{i+1}"] == right_questions[i]:
             st.warning("Correto!",icon="⚠️")
