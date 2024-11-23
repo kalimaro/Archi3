@@ -56,7 +56,8 @@ if submit_button:
         st.warning("Errado",icon="⚠️")
         wrong_questions.append(questions_nums)
         list_responses.append(line[6])
-        
+
+results()
 #Print response list and wrong answers
 def results():
     for i in range(len(list_responses)):
