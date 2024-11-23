@@ -35,7 +35,6 @@ newlist = questions_list[:3]
 if 'responses' not in st.session_state:
     st.session_state.responses = {}
 with st.form(key="my_form"):
-    response = []
     for qt in newlist:
         f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
         csv_reader = csv.reader(f)
@@ -53,7 +52,7 @@ with st.form(key="my_form"):
     
 if submit_button:
     for i in range(questions_nums):
-        st.session_state.responses[f"question_{i}"] = st.session_state[f"question_{i}"]
+        st.session_state.responses[f"question_{i+1}"] = st.session_state[f"question_{i}"]
     st.write("Responses:", st.session_state.responses)
     st.stop()
     #st.text_input(f"Question {i+1}", key=f"question_{i}")
