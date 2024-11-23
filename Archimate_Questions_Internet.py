@@ -26,7 +26,7 @@ for line in csv_reader:
 f.close()
 
 shuffle(questions_list)
-newlist = questions_list[:4]
+newlist = questions_list[:2]
 
 #print questions
 
@@ -52,6 +52,7 @@ for qt in newlist:
                 st.stop()
                 wrong_questions.append(questions_nums)
             list_responses.append(line[6])
+            response = []
         questions_nums = questions_nums+1
     f.close()
     
