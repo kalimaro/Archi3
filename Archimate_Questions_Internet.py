@@ -42,8 +42,8 @@ for qt in newlist:
             st.write(line[4])
             st.write(line[5])
             with st.form(key='my_form'):
-            response = st.text_input("Enter response: ")
-            submit_button = st.form_submit_button(label='Submit')
+                response = st.text_input("Enter response: ")
+                submit_button = st.form_submit_button(label='Submit')
             if submit_button:
                 if response.upper() == line[6]:
                     st.warning("Correto!",icon="⚠️")
