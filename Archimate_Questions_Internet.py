@@ -51,8 +51,8 @@ for qt in newlist:
                 else:    
                     st.warning("Errado",icon="⚠️")
                     wrong_questions.append(questions_nums)
-        list_responses.append(line[6])
-        response = ""
+            list_responses.append(line[6])
+            response = ""
         questions_nums = questions_nums+1
     f.close()
     
