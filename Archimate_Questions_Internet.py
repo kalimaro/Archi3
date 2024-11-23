@@ -51,7 +51,8 @@ with st.form(key="my_form"):
     submit_button = st.form_submit_button(label="Submit")
     
 if submit_button:
-    #for i in range(questions_nums):
+    for i in range(questions_nums):
+        st.write(i)
     #    st.session_state.responses[f"question_{i}"] = st.session_state[f"question_{i}"]
     st.write("Responses:", st.session_state)
     st.stop()
