@@ -58,20 +58,15 @@ if submit_button:
         st.session_state.responses[f"question_{i+1}"] = st.session_state[f"question_{i+1}"]
         if st.session_state.responses[f"question_{i+1}"] == right_questions[i]:
             st.warning("Correto!",icon="⚠️")
+            rights = rights+1
         else:
             st.warning("Errado",icon="⚠️")
+            wrong_questions.append(questions_nums)
+            list_responses.append(line[6])
     st.write("Responses:", st.session_state)
     st.write(right_questions)
     
-    st.stop()
-    #st.text_input(f"Question {i+1}", key=f"question_{i}")
-    if response.upper() == line[6]:
-        st.warning("Correto!",icon="⚠️")
-        rights = rights+1
-    else:    
-        st.warning("Errado",icon="⚠️")
-        wrong_questions.append(questions_nums)
-        list_responses.append(line[6])
+st.stop()
 
 #Print response list and wrong answers
 def results():
