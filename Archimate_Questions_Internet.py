@@ -79,6 +79,7 @@ if submit_button:
     st.write("len List resp: ", len(list_responses))
     final_score = rights/len(list_responses)*100
     st.write("Your final score is: "+str(final_score)+"%")
+    st.stop()  
     
 st.stop()  
 #for key in st.session_state.keys():
