@@ -46,6 +46,7 @@ with st.form(key="my_form"):
 #            response = ""
         questions_nums = questions_nums+1
         f.close()
+        submit_button = st.form_submit_button(label="Submit")
     questions_nums = questions_nums+1
 if submit_button:
     if response.upper() == line[6]:
