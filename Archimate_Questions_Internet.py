@@ -31,30 +31,31 @@ newlist = questions_list[:2]
 #print questions
 
 #st.write(newlist)
-for qt in newlist:
-    f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
-    csv_reader = csv.reader(f)
-    for line in csv_reader:
-        if line[0]== qt :
-            st.write(str(questions_nums) + "-- " + line[1])
-            st.write(line[2])
-            st.write(line[3])
-            st.write(line[4])
-            st.write(line[5])
-            response = st.text_input("Enter response: ", key=str(questions_nums))
-#                if response.upper() == line[6]:
-#                    st.warning("Correto!",icon="⚠️")
-#                    rights = rights+1
-#                else:    
-#                    st.warning("Errado",icon="⚠️")
-#                    wrong_questions.append(questions_nums)
-#            list_responses.append(line[6])
+with st.form(key="my_form"):
+    for qt in newlist:
+        f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
+        csv_reader = csv.reader(f)
+        for line in csv_reader:
+            if line[0]== qt :
+                st.write(str(questions_nums) + "-- " + line[1])
+                st.write(line[2])
+                st.write(line[3])
+                st.write(line[4])
+                st.write(line[5])
+                response = st.text_input("Enter response: ", key=str(questions_nums))
 #            response = ""
+        questions_nums = questions_nums+1
+        f.close()
     questions_nums = questions_nums+1
-    f.close()
-questions_nums = questions_nums+1
-
-    
+if submit_button:
+    if response.upper() == line[6]:
+        st.warning("Correto!",icon="⚠️")
+        rights = rights+1
+    else:    
+        st.warning("Errado",icon="⚠️")
+        wrong_questions.append(questions_nums)
+        list_responses.append(line[6])
+        
 #Print response list and wrong answers
 def results():
     for i in range(len(list_responses)):
