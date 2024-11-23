@@ -45,9 +45,11 @@ for qt in newlist:
             st.stop()   
             if response.upper() == line[6]:
                 st.warning("Correto!",icon="⚠️")
+                st.stop()
                 rights = rights+1
             else:    
                 st.warning("Errado",icon="⚠️")
+                st.stop()
                 wrong_questions.append(questions_nums)
             list_responses.append(line[6])
         questions_nums = questions_nums+1
