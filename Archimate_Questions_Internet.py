@@ -11,21 +11,21 @@ list_responses = []
 wrong_questions = []
 right_questions = []
 
-
-st.title("Archimate Mock Test!")
-with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
-questions_nums = 1
-f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
-csv_reader = csv.reader(f)
-for line in csv_reader:
-    questions_list.append(line[0])
-f.close()
-
-shuffle(questions_list)
-newlist = questions_list[:4]
-
 if 'responses' not in st.session_state:
     st.session_state.responses = {}
+st.title("Archimate Mock Test!")
+with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
+    questions_nums = 1
+    f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
+    csv_reader = csv.reader(f)
+    for line in csv_reader:
+        questions_list.append(line[0])
+    f.close()
+
+    shuffle(questions_list)
+    newlist = questions_list[:4]
+
+
 #with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
     for qt in newlist:
         f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
