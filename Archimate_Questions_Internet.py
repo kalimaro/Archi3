@@ -63,7 +63,7 @@ if submit_button:
         else:
             st.warning("Errado",icon="⚠️")
             wrong_questions.append(i+1)
-            list_responses.append(line[6])
+        list_responses.append(line[6])
     st.write("Responses:", st.session_state)
     st.write(list_responses)
     for j in range(len(list_responses)):
