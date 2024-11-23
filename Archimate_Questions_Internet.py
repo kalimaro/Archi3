@@ -57,6 +57,7 @@ if submit_button:
         st.write(i)
         st.session_state.responses[f"question_{i+1}"] = st.session_state[f"question_{i+1}"]
     st.write("Responses:", st.session_state)
+    st.write(right_questions)
     st.stop()
     #st.text_input(f"Question {i+1}", key=f"question_{i}")
     if response.upper() == line[6]:
