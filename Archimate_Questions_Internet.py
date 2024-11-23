@@ -30,7 +30,7 @@ newlist = questions_list[:4]
 
 #print questions
 
-st.write(newlist)
+#st.write(newlist)
 for qt in newlist:
     f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
     csv_reader = csv.reader(f)
