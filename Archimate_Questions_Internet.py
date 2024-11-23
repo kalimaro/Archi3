@@ -57,7 +57,6 @@ if submit_button:
         wrong_questions.append(questions_nums)
         list_responses.append(line[6])
 
-results()
 #Print response list and wrong answers
 def results():
     for i in range(len(list_responses)):
@@ -72,3 +71,5 @@ def results():
     
     final_score = rights/len(list_responses)*100
     st.write ("\nYour final score is: "+str(final_score)+"%")
+    
+results()
