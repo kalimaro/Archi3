@@ -43,7 +43,7 @@ with st.form(key="my_form"):
                 st.write(line[3])
                 st.write(line[4])
                 st.write(line[5])
-                response.append(questions_nums) = st.text_input("Enter response: ", key=str(questions_nums))
+                response[questions_nums] = st.text_input("Enter response: ", key=str(questions_nums))
         questions_nums = questions_nums+1
         f.close()
     submit_button = st.form_submit_button(label="Submit")
