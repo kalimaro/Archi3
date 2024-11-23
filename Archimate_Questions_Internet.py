@@ -44,15 +44,16 @@ with st.form(key="my_form"):
                 st.write(line[3])
                 st.write(line[4])
                 st.write(line[5])
-                st.text_input("Enter response: ", key=str(questions_nums))
+                st.text_input("Enter response: ", key=f"question_{questions_nums}")
         questions_nums = questions_nums+1
         f.close()
     submit_button = st.form_submit_button(label="Submit")
     
 if submit_button:
     for i in range(questions_nums):
-        response = st.session_state[i]
-        st.write(f"Response to Question {i+1}: {response}")
+        st.session_state.responses[f"question_{i}"] = st.session_state[f"question_{i}"]
+        st.write("Responses:", st.session_state.responses)
+        st.stop()
     #st.text_input(f"Question {i+1}", key=f"question_{i}")
     if response.upper() == line[6]:
         st.warning("Correto!",icon="⚠️")
