@@ -56,16 +56,16 @@ questions_nums = questions_nums+1
 
     
 #Print response list and wrong answers
-for i in range(len(list_responses)):
-    st.write ("Question "+ str(i+1) +") " + list_responses[i])
+def results():
+    for i in range(len(list_responses)):
+        st.write ("Question "+ str(i+1) +") " + list_responses[i])
           
-if wrong_questions == []:
-    st.write("\nNo wrong answers! Congrats!")
-else:
-    st.write ("Wrong Questions:\n")
-    for w in wrong_questions:
-        st.write ("Question: "+str(w))
+    if wrong_questions == []:
+        st.write("\nNo wrong answers! Congrats!")
+    else:
+        st.write ("Wrong Questions:\n")
+        for w in wrong_questions:
+            st.write ("Question: "+str(w))
     
-final_score = rights/len(list_responses)*100
-st.write ("\nYour final score is: "+str(final_score)+"%")
-st.stop()
+    final_score = rights/len(list_responses)*100
+    st.write ("\nYour final score is: "+str(final_score)+"%")
