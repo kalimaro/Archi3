@@ -28,7 +28,7 @@ for line in csv_reader:
 f.close()
 
 shuffle(questions_list)
-newlist = questions_list[:3]
+newlist = questions_list[:4]
 
  #print questions
 
