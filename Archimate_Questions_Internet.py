@@ -15,6 +15,7 @@ if 'responses' not in st.session_state:
     st.session_state.responses = {}
 if 'form_submitted' not in st.session_state:
     st.session_state.form_submitted = False
+    
 st.title("Archimate Mock Test!")
 questions_nums = 1
 f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
@@ -28,22 +29,23 @@ if st.session_state.form_submitted == True:
 
 
 with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
-    for qt in newlist:
-        f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
-        csv_reader = csv.reader(f)
-        for line in csv_reader:
-            if line[0]== qt :
-                st.write(str(questions_nums) + "-- " + line[1])
-                st.write(line[2])
-                st.write(line[3])
-                st.write(line[4])
-                st.write(line[5])
-                right_questions.append(line[6])
-                st.selectbox("Enter response: ",("A", "B", "C", "D"), key=f"question_{questions_nums}", index=None)
-        questions_nums = questions_nums+1
-        f.close()
-    submit_button = st.form_submit_button(label="Submit")
-    st.write(right_questions)
+    if not st.session_state.form_submitted:
+        for qt in newlist:
+            f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
+            csv_reader = csv.reader(f)
+            for line in csv_reader:
+                if line[0]== qt :
+                    st.write(str(questions_nums) + "-- " + line[1])
+                    st.write(line[2])
+                    st.write(line[3])
+                    st.write(line[4])
+                    st.write(line[5])
+                    right_questions.append(line[6])
+                    st.selectbox("Enter response: ",("A", "B", "C", "D"), key=f"question_{questions_nums}", index=None)
+            questions_nums = questions_nums+1
+            f.close()
+        submit_button = st.form_submit_button(label="Submit")
+        st.write(right_questions)
     
     if submit_button:
         st.session_state.form_submitted = True
