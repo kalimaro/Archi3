@@ -55,7 +55,7 @@ with st.form(key="my_form"):
 if submit_button:
     for i in range(questions_nums-1):
         st.write(i)
-        st.session_state.responses[f"question_{i+1}"] = st.session_state[f"question_{i}"]
+        st.session_state.responses[f"question_{i+1}"] = st.session_state[f"question_{i+1}"]
     st.write("Responses:", st.session_state)
     st.stop()
     #st.text_input(f"Question {i+1}", key=f"question_{i}")
