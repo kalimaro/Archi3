@@ -82,5 +82,5 @@ st.write("len List resp: ", len(list_responses))
 for key in st.session_state.keys():
     del st.session_state[key]
 st.session_state.input_value = ""
-st.rerun()
+#st.rerun()
 st.stop()
