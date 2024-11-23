@@ -51,7 +51,7 @@ with st.form(key="my_form"):
     
 if submit_button:
     for i in range(questions_nums):
-        response = st.session_state[{i}]
+        response = st.session_state[i]
         st.write(f"Response to Question {i+1}: {response}")
     #st.text_input(f"Question {i+1}", key=f"question_{i}")
     if response.upper() == line[6]:
