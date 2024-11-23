@@ -36,7 +36,7 @@ for qt in newlist:
     csv_reader = csv.reader(f)
     for line in csv_reader:
         if line[0]== qt :
-            st.write(str(questions_nums) + ". " + line[1])
+            st.write(str(questions_nums) + "") "" + line[1])
             st.write(line[2])
             st.write(line[3])
             st.write(line[4])
@@ -60,7 +60,7 @@ questions_nums = questions_nums+1
     
 #Print response list and wrong answers
 for i in range(len(list_responses)):
-    st.write ("Question "+str(i+1)+") "+list_responses[i])
+    st.write ("Question "+ str(i+1) +") " + list_responses[i])
           
 if wrong_questions == []:
     st.write("\nNo wrong answers! Congrats!")
