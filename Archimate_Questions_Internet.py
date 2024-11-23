@@ -47,7 +47,7 @@ with st.form(key="my_form"):
                 response[questions_nums] = st.text_input("Enter response: ", key=str(questions_nums))
         questions_nums = questions_nums+1
         f.close()
-submit_button = st.form_submit_button(label="Submit")
+    submit_button = st.form_submit_button(label="Submit")
     
 if submit_button:
     #for i in range(questions_nums):
