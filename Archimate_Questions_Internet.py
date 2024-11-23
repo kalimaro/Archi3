@@ -61,7 +61,7 @@ if submit_button:
             rights = rights+1
         else:
             st.warning("Errado",icon="⚠️")
-            wrong_questions.append(questions_nums)
+            wrong_questions.append({i+1})
             list_responses.append(line[6])
     st.write("Responses:", st.session_state)
     st.write(right_questions)
