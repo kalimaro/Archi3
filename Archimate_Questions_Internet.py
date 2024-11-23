@@ -41,7 +41,7 @@ for qt in newlist:
             st.write(line[3])
             st.write(line[4])
             st.write(line[5])
-            with st.form(key='my_form'):
+            with st.form(key=line[0]):
                 response = st.text_input("Enter response: ")
                 submit_button = st.form_submit_button(label='Submit')
             if submit_button:
@@ -52,7 +52,7 @@ for qt in newlist:
                     st.warning("Errado",icon="⚠️")
                     wrong_questions.append(questions_nums)
         list_responses.append(line[6])
-        response = []
+        response = ""
         questions_nums = questions_nums+1
     f.close()
     
