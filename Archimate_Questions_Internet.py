@@ -51,6 +51,7 @@ with st.form(key="my_form"):
         questions_nums = questions_nums+1
         f.close()
     submit_button = st.form_submit_button(label="Submit")
+    st.write(right_questions)
     
 if submit_button:
     for i in range(questions_nums-1):
@@ -64,7 +65,6 @@ if submit_button:
             wrong_questions.append(i+1)
             list_responses.append(line[6])
     st.write("Responses:", st.session_state)
-    st.write(right_questions)
     st.write(list_responses)
     for j in range(len(list_responses)):
         st.write ("Question "+ str(j+1) +") " + list_responses[j])
