@@ -53,6 +53,7 @@ for qt in newlist:
                     wrong_questions.append(questions_nums)
             list_responses.append(line[6])
             response = ""
+    questions_nums = questions_nums+1
     f.close()
 questions_nums = questions_nums+1
 
