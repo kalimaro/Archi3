@@ -65,7 +65,7 @@ if submit_button:
             list_responses.append(line[6])
     st.write("Responses:", st.session_state)
     st.write(right_questions)
-    st.write(list_responses)    
+    st.write(list_responses)
     for j in range(len(list_responses)):
         st.write ("Question "+ str(j+1) +") " + list_responses[j])
           
@@ -75,6 +75,8 @@ if submit_button:
         st.write ("Wrong Questions:")
         for w in wrong_questions:
             st.write ("Question: "+str(w))
-#final_score = rights/len(list_responses)*100
-    
+final_score = rights/len(list_responses)*100
+st.write("Your final score is: "+str(final_score)+"%")
+for key in st.session_state.keys():
+    del st.session_state[key]
 st.stop()
