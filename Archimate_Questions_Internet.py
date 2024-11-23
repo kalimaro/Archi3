@@ -36,7 +36,7 @@ for qt in newlist:
     csv_reader = csv.reader(f)
     for line in csv_reader:
         if line[0]== qt :
-            st.write(str(str(questions_nums)+") "+line[1])),line[2],line[3],line[4],line[5])
+            st.write(str(questions_nums)+". "+line[1],line[2],line[3],line[4],line[5])
             with st.form(key=line[0]):
                 response = st.text_input("Enter response: ")
                 submit_button = st.form_submit_button(label=str(questions_nums))
