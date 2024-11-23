@@ -47,37 +47,29 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
     submit_button = st.form_submit_button(label="Submit")
     st.write(right_questions)
     
-if submit_button:
-    for i in range(questions_nums-1):
-        st.write(i)
-        st.session_state.responses[f"question_{i+1}"] = st.session_state[f"question_{i+1}"]
-        if st.session_state.responses[f"question_{i+1}"] == right_questions[i]:
-            st.warning("Correto!",icon="⚠️")
-            rights = rights+1
-        else:
-            st.warning("Errado",icon="⚠️")
-            wrong_questions.append(i+1)
-        list_responses.append(line[6])
-    st.write("Responses:", st.session_state)
-    st.write(list_responses)
-    for j in range(len(list_responses)):
-        st.write ("Question "+ str(j+1) +") " + list_responses[j])
+    if submit_button:
+        for i in range(questions_nums-1):
+            st.write(i)
+            st.session_state.responses[f"question_{i+1}"] = st.session_state[f"question_{i+1}"]
+            if st.session_state.responses[f"question_{i+1}"] == right_questions[i]:
+                st.warning("Correto!",icon="⚠️")
+                rights = rights+1
+            else:
+                st.warning("Errado",icon="⚠️")
+                wrong_questions.append(i+1)
+            list_responses.append(line[6])
+        st.write("Responses:", st.session_state)
+        st.write(list_responses)
+        for j in range(len(list_responses)):
+            st.write ("Question "+ str(j+1) +") " + list_responses[j])
           
-    if wrong_questions == []:
-        st.write("No wrong answers! Congrats!")
-    else:
-        st.write ("Wrong Questions:")
-        for w in wrong_questions:
-            st.write ("Question: "+str(w))
-    st.write("Rights: ", rights)
-    st.write("len List resp: ", len(list_responses))
-    final_score = rights/len(list_responses)*100
-    st.write("Your final score is: "+str(final_score)+"%")
-    st.stop()  
-    
-st.stop()  
-#for key in st.session_state.keys():
-#    del st.session_state[key]
-#st.session_state.input_value = ""
-#st.rerun()
-
+        if wrong_questions == []:
+            st.write("No wrong answers! Congrats!")
+        else:
+            st.write ("Wrong Questions:")
+            for w in wrong_questions:
+                st.write ("Question: "+str(w))
+        st.write("Rights: ", rights)
+        st.write("len List resp: ", len(list_responses))
+        final_score = rights/len(list_responses)*100
+        st.write("Your final score is: "+str(final_score)+"%")
