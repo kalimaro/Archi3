@@ -46,6 +46,7 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
     st.write(right_questions)
     
     if submit_button:
+        st.write(st.session_state.form_submitted)
         st.session_state.form_submitted = True
         for i in range(questions_nums-1):
             st.write(i)
