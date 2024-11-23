@@ -20,7 +20,7 @@ csv_reader = csv.reader(f)
 for line in csv_reader:
     questions_list.append(line[0])
 f.close()
-if 'responses' not in st.session_state:
+if 'responses' in st.session_state:
     shuffle(questions_list)
     newlist = questions_list[:4]
 
