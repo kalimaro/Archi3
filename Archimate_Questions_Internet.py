@@ -22,9 +22,9 @@ csv_reader = csv.reader(f)
 for line in csv_reader:
     questions_list.append(line[0])
 f.close()
-
-shuffle(questions_list)
-newlist = questions_list[:4]
+if st.session_state.form_submitted == False:
+    shuffle(questions_list)
+    newlist = questions_list[:4]
 
 
 with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
