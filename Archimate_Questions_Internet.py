@@ -34,9 +34,9 @@ newlist = questions_list[:4]
 for qt in newlist:
     f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
     csv_reader = csv.reader(f)
-    st.write(csv_reader)
     for line in csv_reader:
         if line[0]== qt :
+            st.write(qt+"..")
             st.write(str(questions_nums)+") "+line[1])
             st.write(line[2])
             st.write(line[3])
