@@ -20,9 +20,9 @@ csv_reader = csv.reader(f)
 for line in csv_reader:
     questions_list.append(line[0])
 f.close()
-if 'responses' not in st.session_state:
-    shuffle(questions_list)
-    newlist = questions_list[:4]
+
+shuffle(questions_list)
+newlist = questions_list[:4]
 
 
 with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
@@ -36,8 +36,7 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
                 st.write(line[3])
                 st.write(line[4])
                 st.write(line[5])
-                if 'responses' not in st.session_state:
-                    right_questions.append(line[6])
+                right_questions.append(line[6])
                 st.selectbox("Enter response: ",("A", "B", "C", "D"), key=f"question_{questions_nums}", index=None)
         questions_nums = questions_nums+1
         f.close()
