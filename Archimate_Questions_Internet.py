@@ -2,7 +2,6 @@ import pandas as pd
 import streamlit as st
 import csv
 from random import shuffle
-import pandas as pd
 
 #Global initializations
 rights = 0
