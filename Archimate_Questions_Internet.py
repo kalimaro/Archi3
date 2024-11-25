@@ -78,18 +78,18 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
                 rights = rights+1
                 list_responses.append(st.session_state.responses[f"question_{i+1}"])
             else:
-                for qt in st.session_state.newlist:
-                    f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
-                    csv_reader = csv.reader(f)
-                    for line in csv_reader:
-                        if line[0]== qt :
-                            st.write(line[1])
-                            st.write(line[2])
-                            st.write(line[3])
-                            st.write(line[4])
-                            st.write(line[5])
-                    break
-                    f.close()
+                #for qt in st.session_state.newlist:
+                #    f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
+                #    csv_reader = csv.reader(f)
+                #    for line in csv_reader:
+                #        if line[0]== qt :
+                #            st.write(line[1])
+                #            st.write(line[2])
+                #            st.write(line[3])
+                #            st.write(line[4])
+                #            st.write(line[5])
+                #    break
+                #    f.close()
                 st.warning("Question " + str(i+1) + " is Incorrect! " + "Your response was: " + st.session_state.responses[f"question_{i+1}"] + " and the right answer is: " + str(st.session_state.right_questions[i]),icon=":material/close:")
                 list_responses.append(st.session_state.responses[f"question_{i+1}"])
         final_score = rights/len(list_responses)*100
