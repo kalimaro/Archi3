@@ -3,7 +3,7 @@ import streamlit as st
 import csv
 from random import shuffle
 
-#Global initializations
+ #Global initializations
 rights = 0
 questions_list = []
 list_responses = []
