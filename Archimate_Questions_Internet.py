@@ -17,6 +17,7 @@ if 'form_submitted' not in st.session_state:
 
 def callback_function():
     st.session_state.form_submitted = True
+    st.write(questions_nums)
     
 st.title("Archimate Mock Test!")
 
@@ -47,7 +48,7 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
             f.close()
     submit_button = st.form_submit_button(label="Submit", on_click=callback_function, args=None)
     st.write(right_questions)
-    st.write(questions_nums)
+
     
     if submit_button:
         st.write(st.session_state.form_submitted)
