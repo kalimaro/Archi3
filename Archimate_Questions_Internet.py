@@ -75,7 +75,7 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
                             st.write(line[5])
                     break
                     f.close()
-                st.warning("Question " + str(i+1) + " is Incorrect! " + "Your response was: " + st.session_state.responses[f"question_{i+1}"] + "and the right answer is: " + str(st.session_state.right_questions[i]),icon=":material/close:")
+                st.warning("Question " + str(i+1) + " is Incorrect! " + "Your response was: " + st.session_state.responses[f"question_{i+1}"] + " and the right answer is: " + str(st.session_state.right_questions[i]),icon=":material/close:")
                 wrong_questions.append(i+1)
                 list_responses.append(st.session_state.responses[f"question_{i+1}"])
         final_score = rights/len(list_responses)*100
