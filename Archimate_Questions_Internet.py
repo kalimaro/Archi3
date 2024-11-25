@@ -64,10 +64,10 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
                 list_responses.append(st.session_state.responses[f"question_{i+1}"])
             else:
                 for qt in st.session_state.newlist:
-                    st.write(qt)
                     f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
                     csv_reader = csv.reader(f)
                     for line in csv_reader:
+                        st.write("line0= " + str(line[0]) + "  " + "qt=" + str(qt))
                         if line[0]== qt :
                             st.write(line[1])
                             st.write(line[2])
