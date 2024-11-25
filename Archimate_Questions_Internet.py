@@ -57,7 +57,6 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
         st.write(st.session_state.form_submitted)
         #for i in range(questions_nums-1):
         for i in range(st.session_state.questions_nums):
-            st.write(i)
             st.session_state.responses[f"question_{i+1}"] = st.session_state[f"question_{i+1}"]
             if st.session_state.responses[f"question_{i+1}"] == st.session_state.right_questions[i]:
                 st.warning("Question " + str(i+1) + " is Correct!",icon="⚠️")
@@ -67,17 +66,17 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
                 st.warning("Question " + str(i+1) + " is Incorrect! The right answer is: " + str(st.session_state.right_questions[i]),icon="⚠️")
                 wrong_questions.append(i+1)
                 list_responses.append(st.session_state.responses[f"question_{i+1}"])
-        st.write("Responses:", st.session_state)
-        st.write(list_responses)
-        for j in range(len(list_responses)):
-            st.write ("Question "+ str(j+1) +") " + list_responses[j])
+        #st.write("Responses:", st.session_state)
+        #st.write(list_responses)
+        #for j in range(len(list_responses)):
+        #    st.write ("Question "+ str(j+1) +") " + list_responses[j])
           
-        if wrong_questions == []:
-            st.write("No wrong answers! Congrats!")
-        else:
-            st.write ("Wrong Questions:")
-            for w in wrong_questions:
-                st.write ("Question: "+str(w))
+        #if wrong_questions == []:
+        #    st.write("No wrong answers! Congrats!")
+        #else:
+        #    st.write ("Wrong Questions:")
+        #    for w in wrong_questions:
+        #        st.write ("Question: "+str(w))
         st.write("Rights: ", rights)
         st.write("len List resp: ", len(list_responses))
         final_score = rights/len(list_responses)*100
