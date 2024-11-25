@@ -50,7 +50,7 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
             st.session_state.questions_nums = questions_nums-1
             st.session_state.right_questions = right_questions
     submit_button = st.form_submit_button(label="Submit", on_click=callback_function, args=None)
-    st.write(right_questions)
+    #st.write(right_questions)
 
     
     if submit_button:
