@@ -3,7 +3,7 @@ import streamlit as st
 import csv
 from random import shuffle
 
- #Global initializations
+#Global initializations
 rights = 0
 questions_list = []
 list_responses = []
@@ -16,7 +16,6 @@ if 'form_submitted' not in st.session_state:
     st.session_state.form_submitted = False
 
 def callback_function():
-    st.write(questions_nums)
     st.session_state.form_submitted = True
 
     
@@ -32,7 +31,7 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
             questions_list.append(line[0])
         f.close()
         shuffle(questions_list)
-        newlist = questions_list[:4]
+        newlist = questions_list[:8]
         for qt in newlist:
             f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
             csv_reader = csv.reader(f)
