@@ -20,7 +20,7 @@ def callback_function():
     
 st.title("Archimate Mock Test!")
 
-with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False, on_click=callback_function, args=None):
+with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
     #st.write("Entrando no form= " + str(st.session_state.form_submitted))
     if st.session_state.form_submitted == False:
         questions_nums = 1
@@ -45,7 +45,7 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False, on_clic
                     st.selectbox("Enter response: ",("A", "B", "C", "D"), key=f"question_{questions_nums}", index=None)
             questions_nums = questions_nums+1
             f.close()
-    submit_button = st.form_submit_button(label="Submit")
+    submit_button = st.form_submit_button(label="Submit", on_click=callback_function, args=None)
     st.write(right_questions)
     
     if submit_button:
