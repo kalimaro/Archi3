@@ -16,8 +16,9 @@ if 'form_submitted' not in st.session_state:
     st.session_state.form_submitted = False
 
 def callback_function():
-    st.session_state.form_submitted = True
     st.write(questions_nums)
+    st.session_state.form_submitted = True
+
     
 st.title("Archimate Mock Test!")
 
