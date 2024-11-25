@@ -74,6 +74,7 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
                             st.write(line[3])
                             st.write(line[4])
                             st.write(line[5])
+                        break
                     f.close()
                 st.warning("Question " + str(i+1) + " is Incorrect! The right answer is: " + str(st.session_state.right_questions[i]),icon=":material/close:")
                 wrong_questions.append(i+1)
