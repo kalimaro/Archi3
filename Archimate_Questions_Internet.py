@@ -77,8 +77,8 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
         #    st.write ("Wrong Questions:")
         #    for w in wrong_questions:
         #        st.write ("Question: "+str(w))
-        st.write("Rights: ", rights)
-        st.write("len List resp: ", len(list_responses))
+        #st.write("Rights: ", rights)
+        #st.write("len List resp: ", len(list_responses))
         final_score = rights/len(list_responses)*100
         st.write("Your final score is: "+str(final_score)+"%")
         st.session_state.form_submitted = False
