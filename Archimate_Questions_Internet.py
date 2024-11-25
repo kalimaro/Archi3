@@ -63,6 +63,17 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
                 rights = rights+1
                 list_responses.append(st.session_state.responses[f"question_{i+1}"])
             else:
+                for qt in newlist:
+                    f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
+                    csv_reader = csv.reader(f)
+                    for line in csv_reader:
+                        if line[0]== qt :
+                            st.write(str(questions_nums) + "-- " + line[1])
+                            st.write(line[2])
+                            st.write(line[3])
+                            st.write(line[4])
+                            st.write(line[5])
+                    f.close()
                 st.warning("Question " + str(i+1) + " is Incorrect! The right answer is: " + str(st.session_state.right_questions[i]),icon=":material/close:")
                 wrong_questions.append(i+1)
                 list_responses.append(st.session_state.responses[f"question_{i+1}"])
