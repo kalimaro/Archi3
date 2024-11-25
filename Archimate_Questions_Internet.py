@@ -59,6 +59,7 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
         for i in range(st.session_state.questions_nums):
             st.session_state.responses[f"question_{i+1}"] = st.session_state[f"question_{i+1}"]
             if st.session_state.responses[f"question_{i+1}"] == st.session_state.right_questions[i]:
+                st.write(st.session_state.newlist)
                 for qt in st.session_state.newlist:
                     f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
                     csv_reader = csv.reader(f)
