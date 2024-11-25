@@ -64,6 +64,7 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
                 list_responses.append(st.session_state.responses[f"question_{i+1}"])
             else:
                 for qt in st.session_state.newlist:
+                    st.write(qt)
                     f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
                     csv_reader = csv.reader(f)
                     for line in csv_reader:
@@ -77,19 +78,6 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
                 st.warning("Question " + str(i+1) + " is Incorrect! The right answer is: " + str(st.session_state.right_questions[i]),icon=":material/close:")
                 wrong_questions.append(i+1)
                 list_responses.append(st.session_state.responses[f"question_{i+1}"])
-        #st.write("Responses:", st.session_state)
-        #st.write(list_responses)
-        #for j in range(len(list_responses)):
-        #    st.write ("Question "+ str(j+1) +") " + list_responses[j])
-          
-        #if wrong_questions == []:
-        #    st.write("No wrong answers! Congrats!")
-        #else:
-        #    st.write ("Wrong Questions:")
-        #    for w in wrong_questions:
-        #        st.write ("Question: "+str(w))
-        #st.write("Rights: ", rights)
-        #st.write("len List resp: ", len(list_responses))
         final_score = rights/len(list_responses)*100
         st.write("Your final score is: "+str(final_score)+"%")
         st.session_state.form_submitted = False
