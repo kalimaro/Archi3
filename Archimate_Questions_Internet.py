@@ -49,7 +49,27 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
             f.close()
             st.session_state.questions_nums = questions_nums-1
             st.session_state.right_questions = right_questions
+    else:
+        questions_nums = 1
+        f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
+        csv_reader = csv.reader(f)
+        for line in csv_reader:
+            questions_list.append(line[0])
+        f.close()
+        for qt in st.session_state.newlist:
+            f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
+            csv_reader = csv.reader(f)
+            for line in csv_reader:
+                if line[0]== qt :
+                    st.write(str(questions_nums) + "-- " + line[1])
+                    st.write(line[2])
+                    st.write(line[3])
+                    st.write(line[4])
+                    st.write(line[5])
+            questions_nums = questions_nums+1
+            f.close()
     submit_button = st.form_submit_button(label="Submit", on_click=callback_function, args=None)
+        
     #st.write(right_questions)
 
     
