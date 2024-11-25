@@ -31,7 +31,7 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
             questions_list.append(line[0])
         f.close()
         shuffle(questions_list)
-        newlist = questions_list[:8]
+        newlist = questions_list[:10]
         for qt in newlist:
             f = open ('Archimate_Data_Bank.csv',"r", encoding='UTF8')
             csv_reader = csv.reader(f)
