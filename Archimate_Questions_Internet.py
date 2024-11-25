@@ -71,7 +71,7 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
                             st.write(line[5])
                     break
                     f.close()
-                st.warning("Question " + str(i+1) + " is Correct! Your response was: " + st.session_state.responses[f"question_{i+1}"],icon=":material/check:")
+                st.warning("Question " + str(i+1) + " is Correct! Your response was: " + str(st.session_state.responses[f"question_{i+1}"]),icon=":material/check:")
                 rights = rights+1
                 list_responses.append(st.session_state.responses[f"question_{i+1}"])
             else:
