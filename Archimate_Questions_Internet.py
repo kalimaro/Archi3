@@ -47,13 +47,15 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
                     st.selectbox("Enter response: ",("A", "B", "C", "D"), key=f"question_{questions_nums}", index=None)
             questions_nums = questions_nums+1
             f.close()
+    st.session_state.questions_nums = questions_nums-1
     submit_button = st.form_submit_button(label="Submit", on_click=callback_function, args=None)
     st.write(right_questions)
 
     
     if submit_button:
         st.write(st.session_state.form_submitted)
-        for i in range(questions_nums-1):
+        #for i in range(questions_nums-1):
+        for i in range(st.session_state.questions_nums):
             st.write(i)
             st.session_state.responses[f"question_{i+1}"] = st.session_state[f"question_{i+1}"]
             if st.session_state.responses[f"question_{i+1}"] == right_questions[i]:
