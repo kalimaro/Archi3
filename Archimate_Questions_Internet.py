@@ -47,10 +47,10 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
             f.close()
     submit_button = st.form_submit_button(label="Submit", on_click=callback_function, args=None)
     st.write(right_questions)
+    st.write(questions_nums)
     
     if submit_button:
         st.write(st.session_state.form_submitted)
-        st.session_state.form_submitted = True
         for i in range(questions_nums-1):
             st.write(i)
             st.session_state.responses[f"question_{i+1}"] = st.session_state[f"question_{i+1}"]
