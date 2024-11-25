@@ -59,7 +59,7 @@ with st.form(key="my_form", clear_on_submit=True, enter_to_submit=False):
         for i in range(st.session_state.questions_nums):
             st.write(i)
             st.session_state.responses[f"question_{i+1}"] = st.session_state[f"question_{i+1}"]
-            if st.session_state.responses[f"question_{i+1}"] == right_questions[i]:
+            if st.session_state.responses[f"question_{i+1}"] == st.session_state.right_questions[i]:
                 st.warning("Correct!",icon="⚠️")
                 rights = rights+1
                 list_responses.append(st.session_state.responses[f"question_{i+1}"])
