@@ -21,7 +21,7 @@ if not st.session_state.questions:
         reader = csv.reader(f)
         questions_list = list(reader)
         shuffle(questions_list)
-        st.session_state.questions = questions_list[:15]  # 15 questions
+        st.session_state.questions = questions_list[:5]  # 5 questions
         st.session_state.correct_answers = [q[6] for q in st.session_state.questions]
 
 # Quiz form
