@@ -13,11 +13,11 @@ if 'correct_answers' not in st.session_state:
     st.session_state.correct_answers = []
 
 
-st.title("Archimate Mock Test")
+st.title("TOGAF P2 Mock Test")
 
 # Load questions only once
 if not st.session_state.questions:
-    with open('Archimate_Data_Bank.csv', 'r', encoding='UTF8') as f:
+    with open('Question Bank P2.csv', 'r', encoding='UTF8') as f:
         reader = csv.reader(f)
         questions_list = list(reader)
         shuffle(questions_list)
